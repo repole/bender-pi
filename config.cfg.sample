@@ -1,9 +1,9 @@
 [GLOBAL]
-SITE_ID = satellite1
+SITE_ID = satellite
 
 [MQTT]
 HOST = 192.168.1.101
-PORT = x
+PORT = 1883
 
 [MEDIA_CENTER]
 HOST = 192.168.1.102
