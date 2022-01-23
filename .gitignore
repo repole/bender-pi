@@ -70,7 +70,7 @@ libs/
 user_data/
 logs/
 keys/
-config.ini
+config.cfg
 
 # lint
 lint.txt
