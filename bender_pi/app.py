@@ -22,7 +22,10 @@ _LOGGER = logging.getLogger("asyncio")
 MEDIA_CENTER_VOL = None
 BENDER_VOL = None
 CONFIG = configparser.ConfigParser()
-CONFIG.read(os.path.join(__file__, "..", "config.cfg"))
+CONFIG.read(os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    "..",
+    "config.cfg"))
 API_URL = (
     CONFIG["MEDIA_CENTER"]["PROTOCOL"] +
     "://" +
@@ -33,7 +36,7 @@ API_URL = (
 app = HermesApp(
     "Bender",
     host=CONFIG["MQTT"]["HOST"],
-    port=CONFIG["MQTT"]["PORT"])
+    port=int(CONFIG["MQTT"]["PORT"]))
 
 
 async def run_cmd(cmd):
