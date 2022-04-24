@@ -36,7 +36,10 @@ API_URL = (
 app = HermesApp(
     "Bender",
     host=CONFIG["MQTT"]["HOST"],
-    port=int(CONFIG["MQTT"]["PORT"]))
+    port=int(CONFIG["MQTT"]["PORT"]),
+    tls=CONFIG["MQTT"]["TLS"] == "True",
+    username=CONFIG["MQTT"]["USERNAME"] or None,
+    password=CONFIG["MQTT"]["PASSWORD"] or None)
 
 
 async def run_cmd(cmd):
